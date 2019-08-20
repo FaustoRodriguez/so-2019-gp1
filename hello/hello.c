@@ -4,7 +4,6 @@
 int main(int argc,char **argv){
 	for(int i=1;i<argc;i++){
         printHello(argv[i]);
-		printHello(argv[i]);
     }
     return 0;
 }
