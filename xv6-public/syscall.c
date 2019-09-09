@@ -8,30 +8,30 @@
 #include "syscall.h"
 
 char *llamadas[] =
-{"Non Existant call",
-"SYS_fork",
-"SYS_exit",
-"SYS_wait",
-"SYS_pipe",
-"SYS_read",
-"SYS_kill",
-"SYS_exec",
-"SYS_fstat",
-"SYS_chdir",
-"SYS_dup",
-"SYS_getpid",
-"SYS_sbrk",
-"SYS_sleep",
-"SYS_uptime",
-"SYS_open",
-"SYS_write",
-"SYS_mknod",
-"SYS_unlink",
-"SYS_link",
-"SYS_mkdir",
-"SYS_close",
-"SYS_shutdown",
-"SYS_restart"};
+{"NA",
+"fork",
+"exit",
+"wait",
+"pipe",
+"read",
+"kill",
+"exec",
+"fstat",
+"chdir",
+"dup",
+"getpid",
+"sbrk",
+"sleep",
+"uptime",
+"open",
+"write",
+"mknod",
+"unlink",
+"link",
+"mkdir",
+"close",
+"shutdown",
+"restart"};
 
 // User code makes a system call with INT T_SYSCALL.
 // System call number in %eax.
@@ -165,7 +165,7 @@ syscall(void)
   struct proc *curproc = myproc();
   num = curproc->tf->eax;
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
-	cprintf("\nLlamada de sistema: '%s' numero: %d",llamadas[num],num);
+	cprintf("\n'%s' -> %d",llamadas[num],num);
 	if(num==5 || num==22){
 		cprintf("\n");
 		if(num==5){
