@@ -14,6 +14,6 @@ main(int argc, char **argv)
   	if(atoi(argv[i])>=0)
     	sleep(atoi(argv[i]));
 	else
-		printf(2, "Negative sleep time not valid\n");
+		printf(2, "Negative time not valid\n");
   exit();
 }
